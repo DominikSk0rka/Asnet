@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-<main>Asnet</main>
+<div>Asnet</div>
   )
 }
