@@ -4,6 +4,7 @@ import './globals.css'
 import NavBar from './components/nav/NavBar';
 import Footer from './components/footer/Footer';
 
+
 const poppins = Poppins({ subsets: ['latin'], 
 weight: ['400', '700']});
 
