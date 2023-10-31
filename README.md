@@ -12,3 +12,6 @@ https://fonts.google.com/
 
 isntall icons
 npm install react-icons --save
+
+## Colors:
+https://tailwindcss.com/docs/customizing-colors
