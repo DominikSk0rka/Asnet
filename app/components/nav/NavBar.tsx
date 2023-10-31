@@ -29,7 +29,7 @@ const NavBar = () => {
                     <div>
                         <Link href="/" className={teko.className} style={{ fontSize: '24px' }}>Asnet</Link>
                         </div>
-                    <div className="hidden md:block">Search</div>
+                    <div className="hidden md:block">Szukaj</div>
                     <div className="flex items-center gap-8
                     md:gap-12">
                         <div>CartCount</div>
