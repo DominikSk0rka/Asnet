@@ -3,14 +3,19 @@
 import { formatPrice } from "@/utils/formatPrice";
 import { truncateText } from "@/utils/truncateText";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps{
     data: any;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({data}) => {
+    const router = useRouter();
+
     return (
-        <div className="col-span-1 
+        <div 
+        onClick={() => router.push('/product/${data.id}')}
+        className="col-span-1 
         cursor-pointer 
         border-[1.2px]
         border-slate-400
@@ -44,7 +49,6 @@ const ProductCard: React.FC<ProductCardProps> = ({data}) => {
 
                 
                 <div></div>
-                <div>{data.reviews.length} reviews</div>
                 <div className="font-semibold">{formatPrice(data.price)}</div>
             </div>
         </div>
