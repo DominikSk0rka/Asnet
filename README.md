@@ -15,3 +15,6 @@ npm install react-icons --save
 
 ## Colors:
 https://tailwindcss.com/docs/customizing-colors
+
+npm install @mui/material @emotion/react @emotion/styled
+
