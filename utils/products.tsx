@@ -45,7 +45,7 @@ export const products = [
         id: "64a65a6158b470c6e06959ee",
         userId: "6475af156bad4917456e6e1e",
         productId: "64a4ebe300900d44bb50628a",
-        rating: 5,
+        rating: 4,
         comment: "good",
         createdDate: "2023-07-06T06:08:33.067Z",
         user: {
