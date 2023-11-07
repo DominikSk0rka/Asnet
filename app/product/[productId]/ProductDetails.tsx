@@ -1,7 +1,8 @@
 "use client";
 
+import SetQuantity from "@/app/components/products/SetQuantity";
 import { Rating } from "@mui/material";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 interface ProductDetailsProps{
     product: any
@@ -13,7 +14,7 @@ export type CartProductType = {
     category: string,
     brand: string,
     selectedImg: SelectedImgType,
-    qantity:number,
+    quantity:number,
     price: number
 
 }
@@ -37,14 +38,41 @@ const ProductDetails:React.FC<ProductDetailsProps> =
     category: product.category,
     brand: product.brand,
     selectedImg: {...product.images[0]},
-    qantity: 1,
-    price: product.price
+    quantity: 1,
+    price: product.price,
     })
 
     const productRating = 
         product.reviews.reduce((acc:number,item:any) => 
         item.rating + acc, 0) / 
         product.reviews.length
+
+
+
+
+        const handleQtyIncrease = useCallback(() => {
+            if (cartProduct.quantity === 20) {
+                return;
+            }
+            setCartProduct((prev) => {
+                return { ...prev, quantity: prev.quantity + 1 };
+            });
+        }, [cartProduct]);
+
+
+
+        const handleQtyDecrease = useCallback(() => {
+            if (cartProduct.quantity === 1) {
+                return;
+            }
+            setCartProduct((prev) => {
+                return { ...prev, quantity: prev.quantity - 1 };
+            });
+        }, [cartProduct]);
+
+
+
+
 
 
     return ( <div className="grid grid-cols-1
@@ -70,6 +98,15 @@ const ProductDetails:React.FC<ProductDetailsProps> =
          <div className={product.inStock ? "text-teal-400" : "text-rose-400"}>
             {product.inStock ? 'Dostępny' : 'Niedostepny'}</div>
 
+
+            <Horizontal/>
+            <SetQuantity 
+                cartProduct={cartProduct}
+                handleQtyIncrease={handleQtyIncrease}
+                handleQtyDecrease={handleQtyDecrease}
+                />
+            <Horizontal/>
+        
          <div> Dodaj Do Koszyka </div>
     </div>
 </div> );

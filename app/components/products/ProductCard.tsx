@@ -58,6 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({data}) => {
                 </div>
 
                 <div>{data.reviews.length} reviews</div>
+
                 <div className="font-semibold">{formatPrice(data.price)}</div>
             </div>
         </div>
