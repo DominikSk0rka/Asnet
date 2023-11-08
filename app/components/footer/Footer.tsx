@@ -12,6 +12,7 @@ const Footer = () => {
                     <h3 className="text-base font-bold mb-2">Kategorie</h3>
                    <Link href='#'>Komputery</Link>
                    <Link href='#'>Laptopy</Link>
+                   <Link href='#'>Monitory</Link>
                    <Link href='#'>Karty Graficzne</Link>
                    <Link href='#'>Akcesoria</Link>
                 </FooterList>

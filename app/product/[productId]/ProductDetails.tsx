@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/app/components/Button";
 import SetQuantity from "@/app/components/products/SetQuantity";
 import { Rating } from "@mui/material";
 import { useCallback, useState } from "react";
@@ -107,7 +108,12 @@ const ProductDetails:React.FC<ProductDetailsProps> =
                 />
             <Horizontal/>
         
-         <div> Dodaj Do Koszyka </div>
+         <div> 
+            <Button 
+            label="Dodaj Do Koszyka"
+            onClick={() => {}}
+            />
+        </div>
     </div>
 </div> );
 }
