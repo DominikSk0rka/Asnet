@@ -32,8 +32,8 @@ const NavBar = () => {
                     <div className="hidden md:block">Szukaj</div>
                     <div className="flex items-center gap-8
                     md:gap-12">
-                        <div>CartCount</div>
-                        <div>UserMenu</div>
+                        <div>Koszyk</div>
+                        <div>Menu</div>
                     </div>
                 </div>
             </Container>
