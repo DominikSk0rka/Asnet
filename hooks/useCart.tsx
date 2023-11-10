@@ -1,6 +1,6 @@
 import { CartProductType } from "@/app/product/[productId]/ProductDetails";
 import { createContext, useState, useContext, useCallback, useEffect } from "react";
-
+import {toast} from 'react-hot-toast';
 
 type CartContextType = {
     cartTotalQty: number;
@@ -20,6 +20,9 @@ export const CartContextProvider = (props: Props) => {
     const [cartProducts, setCartProducts] = useState<CartProductType[] | null>(null);
 
 
+
+
+    toast.success("Produkt dodany do koszyka");
 
 //------------------------------------po odswieżeniu pobiera item z localstorage----------------------------------------------------
     useEffect(() => {

@@ -22,3 +22,9 @@ npm i moment
 
 ## React Icons:
 https://react-icons.github.io/react-icons
+
+
+
+
+https://react-hot-toast.com/docs
+npm install react-hot-toast

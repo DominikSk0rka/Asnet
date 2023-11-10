@@ -32,7 +32,9 @@ const NavBar = () => {
                     <div className="hidden md:block">Szukaj</div>
                     <div className="flex items-center gap-8
                     md:gap-12">
-                        <div>Koszyk</div>
+                        <div>
+                            <Link href="/cart">Koszyk</Link>
+                        </div>
                         <div>Menu</div>
                     </div>
                 </div>
