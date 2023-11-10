@@ -7,6 +7,8 @@ type CartContextType = {
     cartProducts: CartProductType[] | null;
     handleAddProductToCart: (product: CartProductType) => void;
     handleRemoveProductFromCart: (product: CartProductType) => void;
+    handleClearCart: () => void;
+
 };
 
 
@@ -69,6 +71,14 @@ export const CartContextProvider = (props: Props) => {
     );
 
 
+//----------------------------------Usuwanie wszystkiego z koszyka------------------------------------------------
+    const handleClearCart = useCallback(()=>{
+        setCartProducts(null);
+        setCartTotalQty(0);
+        localStorage.setItem("eShopCartItems", JSON.
+            stringify(null));
+    },[cartProducts]);
+
 
 
     const value = {
@@ -76,6 +86,7 @@ export const CartContextProvider = (props: Props) => {
         cartProducts,
         handleAddProductToCart,
         handleRemoveProductFromCart,
+        handleClearCart,
     };
 
     return <CartContext.Provider value={value} {...props}/>;

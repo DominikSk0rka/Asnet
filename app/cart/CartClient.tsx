@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import ItemContent from "./ItemContent";
 //--------------------------Gdy nic nie ma w koszyku------------------------------------------
 const CartClient = () => {
-    const {cartProducts} = useCart()
+    const {cartProducts, handleClearCart} = useCart()
     if(!cartProducts || cartProducts.length ==0){
         return(
             <div className="flex flex-col items-center">
@@ -54,7 +54,8 @@ const CartClient = () => {
 
         <div className="border-t-[1.5px] border-slate-200 py-4 flex justify-between gap-4">
             <div className="w-[90px]">
-                <Button label="Wyczyść koszyk" onClick={()=>{}} small outline/>
+                <Button label="Wyczyść koszyk" onClick={()=>{handleClearCart();
+                }} small outline/>
             </div>
 
 
