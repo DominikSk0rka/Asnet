@@ -38,7 +38,7 @@ const CartClient = () => {
             <div className="col-span-2 justify-self-start">PRODUKT</div>
             <div className="justify-self-center">CENA</div>
             <div className="justify-self-center">ILOŚĆ</div>
-            <div className="justify-self-end">CAŁKOWITY KOSZT</div>
+            <div className="justify-self-end">KOSZT</div>
         </div>
 
 

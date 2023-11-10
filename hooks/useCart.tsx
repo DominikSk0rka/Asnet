@@ -6,7 +6,9 @@ type CartContextType = {
     cartTotalQty: number;
     cartProducts: CartProductType[] | null;
     handleAddProductToCart: (product: CartProductType) => void;
-}
+    handleRemoveProductFromCart: (product: CartProductType) => void;
+};
+
 
 export const CartContext = createContext<CartContextType | null >(null);
 
@@ -22,7 +24,7 @@ export const CartContextProvider = (props: Props) => {
 
 
 
-    toast.success("Produkt dodany do koszyka");
+    
 
 //------------------------------------po odswieżeniu pobiera item z localstorage----------------------------------------------------
     useEffect(() => {
@@ -32,28 +34,49 @@ export const CartContextProvider = (props: Props) => {
     }, []);
 
 //----------------------------------------------------------------------------------------
-
-
     const handleAddProductToCart = useCallback((product: CartProductType)=>{
         setCartProducts((prev)=>{
              
             let updatedCart;
             if(prev){
-                updatedCart = {...prev, product}
+                updatedCart = [...prev, product];
             }else{
-                updatedCart =[product]
+                updatedCart =[product];
             }
-
-            localStorage.setItem("eShopCartItems", JSON.stringify(updatedCart));
+            toast.success("Produkt dodany do koszyka");
+            localStorage.setItem("eShopCartItems", JSON.
+            stringify(updatedCart));
             return updatedCart;
-        })
+        });
     }, []);
+//----------------------------------------------------------------------------------------
+    const handleRemoveProductFromCart = useCallback((
+        product: CartProductType
+        )=>{
+        if(cartProducts){
+            const fillteredProducts = cartProducts.filter
+            ((item)=>{
+                return item.id !== product.id;
+            });
+            setCartProducts(fillteredProducts);
+            toast.success("Usunięto pomyślnie");
+            localStorage.setItem("eShopCartItems", JSON.
+            stringify(fillteredProducts)
+            );
+        }
+    }, 
+    [cartProducts]
+    );
+
+
+
 
     const value = {
         cartTotalQty,
         cartProducts,
         handleAddProductToCart,
-    }
+        handleRemoveProductFromCart,
+    };
 
     return <CartContext.Provider value={value} {...props}/>;
 };
