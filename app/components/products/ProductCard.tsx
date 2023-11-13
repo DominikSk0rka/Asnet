@@ -16,11 +16,14 @@ const ProductCard: React.FC<ProductCardProps> = ({data}) => {
         const productRating = 
         data.reviews.reduce((acc:number,item:any) => 
         item.rating + acc, 0) / 
-        data.reviews.length
-
+        data.reviews.length;
+    console.log(productRating);
     return (
         <div 
-        onClick={() => router.push('/product/${data.id}')}
+
+        onClick={() => router.push(`/product/${data.id}`)} 
+
+
         className="col-span-1 
         cursor-pointer 
         border-[1.2px]
