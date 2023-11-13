@@ -2,6 +2,7 @@ import Link from "next/link";
 import Container from "../Container";
 
 import {Teko} from "next/font/google";
+import CartCount from "./CartCount";
 
 const teko = Teko({subsets: ['latin'], weight: ["500"]})
 
@@ -27,13 +28,13 @@ const NavBar = () => {
                 md:gap-0
                 "> 
                     <div>
-                        <Link href="/" className={teko.className} style={{ fontSize: '24px' }}>Asnet</Link>
+                        <Link href="/" className={teko.className} style={{ fontSize: '32px' }}>Asnet</Link>
                         </div>
                     <div className="hidden md:block">Szukaj</div>
                     <div className="flex items-center gap-8
                     md:gap-12">
                         <div>
-                            <Link href="/cart">Koszyk</Link>
+                            <CartCount />
                         </div>
                         <div>Menu</div>
                     </div>
