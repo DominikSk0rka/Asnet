@@ -10,38 +10,39 @@ import { useCallback,useEffect, useState } from "react";
 import { MdCheckCircle } from "react-icons/md";
 
 interface ProductDetailsProps{
-    product: any
-}
+    product: any;
+};
 export type CartProductType = {
-    id: string,
-    name: string,
-    description: string,
-    category: string,
-    brand: string,
-    selectedImg: SelectedImgType,
-    quantity:number,
-    price: number
+    id: string;
+    name: string;
+    description: string;
+    category: string;
+    brand: string;
+    selectedImg: SelectedImgType;
+    quantity:number;
+    price: number;
 
-}
+};
 export type SelectedImgType = {
-    color: string,
-    colorCode: string,
-    image: string
-}
+    color: string;
+    colorCode: string;
+    image: string;
+};
 
 const Horizontal = () =>{
-    return <hr className="w-[30% mt-2 mb-2]"/>
+    return <hr className="w-[30% mt-2 mb-2]"/>;
 };
+
+
 
 const ProductDetails:React.FC<ProductDetailsProps> = 
 ({product}) => {
 
-
-
     const {handleAddProductToCart, cartProducts} = useCart();
     const [isProductInCart, setIsProductInCart] = useState(false);
 
-    const [cartProduct, setCartProduct] = useState <CartProductType>({
+    const [cartProduct, setCartProduct] = 
+    useState<CartProductType>({
     id: product.id,
     name: product.name,
     description: product.description,
