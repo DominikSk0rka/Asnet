@@ -3,29 +3,39 @@
 npx create-next-app@latest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+
+
 
 ## Fonts:
 https://fonts.google.com/
 
 
-
-isntall icons
-npm install react-icons --save
-
 ## Colors:
-https://tailwindcss.com/docs/customizing-colors
-https://tailwindcss.com/docs/background-color
+[Customizing-colors](#https://tailwindcss.com/docs/customizing-colors)
+[Background-colors](#https://tailwindcss.com/docs/background-colors)
 
+```bash
 npm install @mui/material @emotion/react @emotion/styled
-
 npm i moment
+```
 
 ## React Icons:
-https://react-icons.github.io/react-icons
+[React-icons](#https://react-icons.github.io/react-icons)
+```bash
+isntall icons
+npm install react-icons --save
+```
+## React Toast:
+[React-Toast](#https://react-hot-toast.com/docs)
+```bash
+-npm install react-hot-toast
+```
 
-
-
-
-https://react-hot-toast.com/docs
-npm install react-hot-toast
+## React Hook:
+[React-Hook](#https://react-hook-form.com/get-started)
+```bash
+npm install react-hook-form
+```
