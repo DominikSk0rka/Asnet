@@ -11,13 +11,16 @@ import { FcGoogle } from "react-icons/Fc"
 import { BsFacebook } from "react-icons/Bs"
 
 
-const RegisterForm = () => {
 
+
+const LoginForm = () => {
 const [isLoading, setIsLoading] = useState(false);
-const {register, handleSubmit, formState:{errors},  
+const {
+    register, 
+    handleSubmit, 
+    formState:{errors},  
 } = useForm<FieldValues>({
     defaultValues:{
-        name: '',
         email: '',
         password: '',
 
@@ -34,22 +37,13 @@ const {register, handleSubmit, formState:{errors},
 {/* ------------------------------------------------------------------------------------------------ */}
     return ( 
     <>
-    <Heading title="Zarejestruj się do Asnet"/>
+    <Heading title="Zaloguj się do Asnet"/>
     <hr className="bg-slate-300 w-full h-px"/>
 
-
-    <Input
-    id="name"
-    label="Imię"
-    disabled={isLoading}
-    register={register}
-    errors={errors}
-    required
-    />
     
     <Input
     id="email"
-    label="Kowalski@gmail.com"
+    label="E-mail"
     disabled={isLoading}
     register={register}
     errors={errors}
@@ -65,12 +59,12 @@ const {register, handleSubmit, formState:{errors},
     required
     type="password"
     />    
-    <Button label = {isLoading ? "Ładuje  się" : "Zarejestruj się"} onClick={handleSubmit(onSubmit)}
+    <Button label = {isLoading ? "Ładuje  się" : "Zaloguj się"} onClick={handleSubmit(onSubmit)}
     /> 
     <p className="text-sm ">
-       Masz już konto? 
-       <Link className="underline" href="/login" style={{ marginLeft: '10px' }}>
-       Zaloguj się
+      Nie masz konta?
+       <Link className="underline" href="/register" style={{ marginLeft: '10px' }}>
+      Zarejestruj się
        </Link> 
     </p>
 
@@ -80,13 +74,13 @@ const {register, handleSubmit, formState:{errors},
 <div className="gap-2 flex flex-center">
         <Button
         outline
-        label="Zarejestruj się przez Google"
+        label="Kontynuj z Google"
         icon={FcGoogle}
         onClick={() => {}}
         />
          <Button
         outline
-        label="Zarejestruj się przez Facebook"
+        label="Kontynuj z Facebook"
         icon={BsFacebook}
         onClick={() => {}}
         />
@@ -97,4 +91,4 @@ const {register, handleSubmit, formState:{errors},
     );
 };
  
-export default RegisterForm;
+export default LoginForm;

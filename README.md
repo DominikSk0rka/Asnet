@@ -39,3 +39,6 @@ npm install react-icons --save
 ```bash
 npm install react-hook-form
 ```
+
+
+ctr D select all words i want
