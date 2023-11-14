@@ -34,6 +34,7 @@ model User {
   emailVerified DateTime?
   image         String?
   hashedPassword String?
+  phoneNumber        String?
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
   role Role @default(USER)

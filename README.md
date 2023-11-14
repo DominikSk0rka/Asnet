@@ -15,6 +15,7 @@ npx create-next-app@latest
 
 ## Colors:
 [Customizing colors](https://tailwindcss.com/docs/customizing-colors)
+
 [Background colors](https://tailwindcss.com/docs/background-colors)
 
 ```bash
@@ -45,8 +46,14 @@ npm install react-hook-form
 ```bash
 npm install @prisma/client @auth/prisma-adapter next-auth
 npm install prisma --save-dev
+
+npm i @next-auth/prisma-adapter
 ```
 
+## Bcrypt install: 
+```bash
+npm i bcrypt @types/bcrypt
+```
 
 
 
