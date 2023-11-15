@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import Input from "../components/inputs/input";
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
@@ -14,10 +14,13 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import {signIn} from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { SafeUser } from "@/types";
 
+interface RegisterFormProps{
+    currentUser: SafeUser | null;
+}
 
-
-const RegisterForm = () => {
+const RegisterForm:React.FC<RegisterFormProps> = ({currentUser}) => {
 const [isLoading, setIsLoading] = useState(false);
 const {
      register,
@@ -38,6 +41,15 @@ const {
 
 
     const router = useRouter();
+    useEffect(() => {
+        if(currentUser){
+            router.push("/");
+            router.refresh;
+        }
+    }, []);
+
+
+
     const onSubmit: SubmitHandler<FieldValues> = (data) =>
         {
         setIsLoading(true);
@@ -72,7 +84,8 @@ const {
 
 
 
-
+    if(currentUser){
+        return <p className="text-center flex-center text-2xl">Jesteś już zalogowany, przekierowuje...</p>}
 
 {/* ------------------------------------------------------------------------------------------------ */}
     return ( 

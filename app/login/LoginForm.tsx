@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import Input from "../components/inputs/input";
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
@@ -38,6 +38,14 @@ const {
 
     const router = useRouter();
 
+    useEffect(() => {
+        if(currentUser){
+            router.push("/");
+            router.refresh;
+        }
+    }, []);
+
+
     const onSubmit:SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
         signIn('credentials',{
@@ -62,7 +70,7 @@ const {
 
 
 if(currentUser){
-    return <p className="text-center text-4xl">Jesteś już zalogowany.</p>
+    return <p className="text-center flex-center text-2xl">Jesteś już zalogowany, przekierowuje...</p>
 }
 
 
