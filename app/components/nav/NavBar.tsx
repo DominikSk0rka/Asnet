@@ -4,10 +4,17 @@ import Container from "../Container";
 import {Teko} from "next/font/google";
 import CartCount from "./CartCount";
 import UserMenu from "./UserMenu";
+import { getCurrentUser } from "@/actions/getCurrentUser";
 
 const teko = Teko({subsets: ['latin'], weight: ["500"]})
 
-const NavBar = () => {
+const NavBar = async() => {
+
+
+    const currentUser = await getCurrentUser();
+  
+
+
     return ( 
     <div className="
     sticky
@@ -37,7 +44,7 @@ const NavBar = () => {
                         <div>
                             <CartCount />
                         </div>
-                        <UserMenu  />
+                        <UserMenu  currentUser={currentUser}/>
                     </div>
                 </div>
             </Container>

@@ -9,11 +9,19 @@ import Link from "next/link";
 
 import { FcGoogle } from "react-icons/Fc"
 import { BsFacebook } from "react-icons/Bs"
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import { SafeUser } from "@/types";
+
+interface LoginFormProps{
+    currentUser: SafeUser | null;
+}
 
 
 
 
-const LoginForm = () => {
+const LoginForm:React.FC<LoginFormProps> = ({currentUser}) => {
 const [isLoading, setIsLoading] = useState(false);
 const {
     register, 
@@ -27,11 +35,35 @@ const {
     },
 });
 
+
+    const router = useRouter();
+
     const onSubmit:SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
-        console.log(data);
+        signIn('credentials',{
+            ...data,
+            redirect: false
+        }).then((callback)=>{
+            setIsLoading(false)
+
+            if (callback?.ok){
+                router.push("/");
+                router.refresh();
+                toast.success("Zalogowano");
+            }
+            
+            if(callback?.error){
+                toast.error(callback.error);
+            }
+
+        })
 
     };
+
+
+if(currentUser){
+    return <p className="text-center text-4xl">Jesteś już zalogowany.</p>
+}
 
 
 {/* ------------------------------------------------------------------------------------------------ */}
