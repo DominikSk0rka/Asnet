@@ -56,6 +56,21 @@ npm i bcrypt @types/bcrypt
 ```
 
 
+## MangoDb
+[MangoDB](https://cloud.mongodb.com/)
+
+*Database migration
+```bash
+npx prisma db push
+```
+
+axios for register
+```bash
+npm i axios
+```
+
 
 
 ctr D select all words i want
+
+
