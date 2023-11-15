@@ -3,6 +3,7 @@ import Container from "../Container";
 
 import {Teko} from "next/font/google";
 import CartCount from "./CartCount";
+import UserMenu from "./UserMenu";
 
 const teko = Teko({subsets: ['latin'], weight: ["500"]})
 
@@ -36,7 +37,7 @@ const NavBar = () => {
                         <div>
                             <CartCount />
                         </div>
-                        <div>Menu</div>
+                        <UserMenu  />
                     </div>
                 </div>
             </Container>
