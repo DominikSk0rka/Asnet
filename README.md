@@ -72,6 +72,9 @@ npm i axios
 ## Google Console
 [Login Google](https://console.cloud.google.com/welcome?hl=pl&project=asnet-shop)
 
+## Stripe Payments
+[Stripe](https://dashboard.stripe.com/apikeys)
+
 ctr D select all words i want
 
 
