@@ -33,7 +33,7 @@ export async function POST(request: Request){
     const orderData = {
         user: {connect: {id: currentUser.id}},
         amount: total,
-        currency : "PLN",
+        currency : "pln",
         status: "W trakcie",
         deliveryStatus: "W trakcie",
         paymentIntentId: payment_intent_id,
@@ -75,12 +75,6 @@ export async function POST(request: Request){
     }
     return NextResponse.json({paymentIntent: updated_intent});
     }
-
-
-
-
-
-
 
 
     }else{

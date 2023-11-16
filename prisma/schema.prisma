@@ -37,7 +37,7 @@ model User {
   updatedAt DateTime @updatedAt
   role Role @default(USER)
   accounts      Account[]
-  Orders        Order[]
+  orders        Order[]
 
 }
 
@@ -48,7 +48,7 @@ model Order{
   currency String
   status String
   deliveryStatus String?
-  createData DateTime @default(now())
+  createDate DateTime @default(now())
   paymentIntentId String @unique
   products CartProductType[]
   address Address?
@@ -77,7 +77,7 @@ type Address{
   city String
   country String
   line1 String
-  line2 String
+  line2 String?
   postal_code String
   state String
 }

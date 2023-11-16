@@ -39,6 +39,7 @@ const CheckoutClient = () => {
                 handleSetPaymentIntent(data.paymentIntent.id);
             }).catch((error)=>{
                 setError(true);
+                console.log("Error", error);
                 toast.error("Coś poszło nie tak");
             });
         }

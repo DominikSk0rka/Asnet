@@ -75,6 +75,9 @@ npm i axios
 ## Stripe Payments
 [Stripe](https://dashboard.stripe.com/apikeys)
 
+```bash
+npm i stripe
+```
 ctr D select all words i want
 
 
