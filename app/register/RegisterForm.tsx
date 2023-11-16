@@ -136,13 +136,13 @@ const {
 <div className="gap-2 flex flex-center">
         <Button
         outline
-        label="Zarejestruj się przez Google"
+        label="Kontynuj przez Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => {signIn("google")}}
         />
          <Button
         outline
-        label="Zarejestruj się przez Facebook"
+        label="Kontynuj przez Facebook"
         icon={BsFacebook}
         onClick={() => {}}
         />

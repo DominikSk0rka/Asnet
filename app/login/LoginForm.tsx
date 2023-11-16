@@ -114,13 +114,13 @@ if(currentUser){
 <div className="gap-2 flex flex-center">
         <Button
         outline
-        label="Kontynuj z Google"
+        label="Kontynuj przez Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => {signIn("google")}}
         />
          <Button
         outline
-        label="Kontynuj z Facebook"
+        label="Kontynuj przez Facebook"
         icon={BsFacebook}
         onClick={() => {}}
         />
