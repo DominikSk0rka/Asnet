@@ -12,13 +12,36 @@ npm install prisma --save-dev
 npm i @next-auth/prisma-adapter
 npm i bcrypt @types/bcrypt
 npm i axios
+npm i stripe
+npm install --save @stripe/react-stripe-js @stripe/stripe-js
 ```
+## MangoDb
+[MangoDB](https://cloud.mongodb.com/)
+## Google Console
+[Login Google](https://console.cloud.google.com/welcome?hl=pl&project=asnet-shop)
+## Stripe Payments
+[Stripe](https://dashboard.stripe.com/apikeys)
+
 
 ## database
 ```bash
 npx prisma db push
 ```
 
-
-
 extensions vs code "Prisma"
+
+## Fonts:
+[Fonts google](https://fonts.google.com/)
+## Colors:
+[Customizing colors](https://tailwindcss.com/docs/customizing-colors)
+[Background colors](https://tailwindcss.com/docs/background-colors)
+## React Icons:
+[React icons](https://react-icons.github.io/react-icons)
+## React Toast:
+[React toast](https://react-hot-toast.com/docs)
+## Next Auth:
+[Next auth](https://next-auth.js.org/)
+## React Hook:
+[React hook](https://react-hook-form.com/get-started)
+
+
