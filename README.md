@@ -14,6 +14,7 @@ npm i axios
 npm i stripe
 npm install --save @stripe/react-stripe-js @stripe/stripe-js
 npm i micro
+npm install firebase
 ```
 
 ## Windows PowerShell
@@ -64,3 +65,5 @@ extensions vs code "Prisma"
 [React hook](https://react-hook-form.com/get-started)
 
 
+## Firebase storage
+[Storage](https://console.firebase.google.com/project/asnet-shop-e3990/storage/asnet-shop-e3990.appspot.com/files)
