@@ -77,7 +77,6 @@ const CheckoutClient = () => {
                           />
                         </Elements>
                     )}
-                    {loading && <div className="text-center">Ładuję płatności...</div>}
                     {error && <div className="text-center text-rose-500">Coś poszło nie tak</div>}
                     {paymentSuccess && 
                     <div className="flex items-center flex-col gap-4">
