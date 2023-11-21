@@ -53,7 +53,7 @@ export async function POST(request: Request){
         //Zaktualizować zamowienie
         const current_intent = await stripe.paymentIntents.retrieve(payment_intent_id)
 
-        if(currentUser){
+        if(current_intent){
             const updated_intent = await stripe.paymentIntents.update(
                 payment_intent_id,
                 {amount: total}
