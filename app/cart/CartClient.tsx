@@ -6,9 +6,21 @@ import Heading from "../components/Heading";
 import Button from "@/app/components/products/Button";
 import ItemContent from "./ItemContent";
 import { formatPrice } from "@/utils/formatPrice";
+import { SafeUser } from "@/types";
+import { useRouter } from "next/navigation";
+
+
+interface CartClientProps{
+    currentUser: SafeUser | null;
+}
+
+
 //--------------------------Gdy nic nie ma w koszyku------------------------------------------
-const CartClient = () => {
-    const {cartProducts, handleClearCart, cartTotalAmount} = useCart()
+const CartClient: React.FC<CartClientProps> = ({currentUser}) => {
+    const {cartProducts, handleClearCart, cartTotalAmount} = useCart();
+
+    const router = useRouter();
+
     if(!cartProducts || cartProducts.length ==0){
         return(
             <div className="flex flex-col items-center">
@@ -66,8 +78,12 @@ const CartClient = () => {
                     <span>{formatPrice(cartTotalAmount)}</span>
                     </div>
                     <p className="text-slate-500">Podatki i wysyłka obliczone przy kupnie</p>
-                <Button label="Kup" onClick={() => {
-                }}/>
+                <Button 
+                label={currentUser ? "Kup" : "Zaloguj się by kupić"} 
+                outline = {currentUser ? false: true}
+                onClick={() => {currentUser ? router.push("/checkout") : router.push("/login");
+                }}
+                />
 
 
                <Link href={"/"} className="
