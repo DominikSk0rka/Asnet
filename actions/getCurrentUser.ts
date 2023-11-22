@@ -32,4 +32,4 @@ export async function getCurrentUser(){
     }catch(error: any){
         return null;
     }
-}
+} export default getCurrentUser;

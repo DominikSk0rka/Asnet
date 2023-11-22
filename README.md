@@ -15,6 +15,8 @@ npm i stripe
 npm install --save @stripe/react-stripe-js @stripe/stripe-js
 npm i micro
 npm install firebase
+npm install --save react-dropzone
+
 ```
 
 ## Windows PowerShell
@@ -53,8 +55,10 @@ extensions vs code "Prisma"
 ## Fonts:
 [Fonts google](https://fonts.google.com/)
 ## Colors:
+[Colors](https://tailwindcss.com/docs/text-color) 
+
 [Customizing colors](https://tailwindcss.com/docs/customizing-colors)
-[Background colors](https://tailwindcss.com/docs/background-colors)
+[Background colors](https://tailwindcss.com/docs/background-color)
 ## React Icons:
 [React icons](https://react-icons.github.io/react-icons)
 ## React Toast:
