@@ -16,7 +16,8 @@ npm install --save @stripe/react-stripe-js @stripe/stripe-js
 npm i micro
 npm install firebase
 npm install --save react-dropzone
-
+npm install @mui/material @emotion/react @emotion/styled
+npm i @mui/x-data-grid
 ```
 
 ## Windows PowerShell
@@ -37,6 +38,9 @@ then download weebhook and upload to env
 
 
 
+
+## Mui 
+[Mui](https://mui.com/material-ui/react-table/)
 ## MangoDb
 [MangoDB](https://cloud.mongodb.com/)
 ## Google Console
