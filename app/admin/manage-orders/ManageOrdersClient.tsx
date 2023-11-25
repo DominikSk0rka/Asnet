@@ -142,7 +142,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
                 handleDeliver(params.row.id)
             }}/>
             <ActionBtn icon={MdRemoveRedEye} onClick={() => {
-                router.push(`order/${params.row.id}`);
+                router.push(`/order/${params.row.id}`);
             }}/>
             </div>
         );
