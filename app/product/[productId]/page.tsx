@@ -1,17 +1,18 @@
 import Container from "@/app/components/Container";
-import { products } from "@/utils/products";
 import ProductDetails from "./ProductDetails";
 import ListRating from "./ListRating";
+import getProductById from "@/actions/getProductById";
+import NullData from "@/app/components/NullData";
 
 interface IPrams{
     productId?: string
 }
 
-const Product = ({params} : {params: IPrams}) => {
+const Product = async({params} : {params: IPrams}) => {
 
-    const product = products.find((item) => item.id == params.productId);
+    const product = await getProductById(params);
 
-  
+    if(!product) return <NullData title="Produkt o tym id nie istnieje!"/>
     return (
         <div className="p-8">
             <Container>
