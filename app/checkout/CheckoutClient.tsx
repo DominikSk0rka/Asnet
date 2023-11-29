@@ -82,7 +82,7 @@ const CheckoutClient = () => {
                     <div className="flex items-center flex-col gap-4">
                         <div className="text-teal-500 text-center">Transakcja zakończona sukcesem</div>
                         <div className="max-w-[220px] w-full">
-                            <Button label="Zobacz swoje zamówienia" onClick={() => router.push("/order")}/>
+                            <Button label="Zobacz swoje zamówienia" onClick={() => router.push("/orders")}/>
                         </div>
                     </div>}
             </div>
