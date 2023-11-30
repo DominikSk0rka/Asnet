@@ -6,6 +6,7 @@ import CartCount from "./CartCount";
 import UserMenu from "./UserMenu";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import Categories from "./Categories";
+import SearchBar from "../SearchBar";
 
 const teko = Teko({subsets: ['latin'], weight: ["500"]})
 
@@ -39,7 +40,7 @@ const NavBar = async() => {
                     <div>
                         <Link href="/" className={teko.className} style={{ fontSize: '32px' }}>Asnet</Link>
                         </div>
-                    <div className="hidden md:block">Szukaj</div>
+                    <div className="hidden md:block"><SearchBar/></div>
                     <div className="flex items-center gap-8
                     md:gap-12">
                         <div>
