@@ -19,6 +19,7 @@ npm install --save react-dropzone
 npm install @mui/material @emotion/react @emotion/styled
 npm i @mui/x-data-grid
 npm i query-string
+npm install --save chart.js react-chartjs-2
 ```
 
 ## Windows PowerShell
