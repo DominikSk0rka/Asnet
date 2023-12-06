@@ -54,8 +54,6 @@ model Product{
   reviews Review[]
 }
 
-
-
 model Review{
   id String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @db.ObjectId
