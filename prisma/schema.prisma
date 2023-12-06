@@ -34,7 +34,7 @@ model User {
   image         String?
   hashedPassword String?
   createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  updatedAt DateTime @updatedAt
   role Role @default(USER)
 
   accounts      Account[]
@@ -53,6 +53,8 @@ model Product{
   images Image[]
   reviews Review[]
 }
+
+
 
 model Review{
   id String @id @default(auto()) @map("_id") @db.ObjectId
