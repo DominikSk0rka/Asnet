@@ -8,8 +8,8 @@ generator client {
 }
 
 model Account {
-  id  String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId             String @db.ObjectId
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String  @db.ObjectId
   type               String
   provider           String
   providerAccountId  String
@@ -27,19 +27,19 @@ model Account {
 }
 
 model User {
-  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
   email         String?   @unique
   emailVerified DateTime?
   image         String?
   hashedPassword String?
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  updateAt DateTime @updatedAt
   role Role @default(USER)
+
   accounts      Account[]
   orders        Order[]
   reviews       Review[]
-
 }
 
 model Product{
@@ -53,6 +53,7 @@ model Product{
   images Image[]
   reviews Review[]
 }
+
 model Review{
   id String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @db.ObjectId
@@ -60,12 +61,13 @@ model Review{
   rating Int
   comment String
   createdDate DateTime @default(now())
+
   product Product @relation(fields: [productId], references: [id])
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Order{
-  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  id String  @id @default(auto()) @map("_id") @db.ObjectId
   userId String @db.ObjectId
   amount Float
   currency String
@@ -76,7 +78,7 @@ model Order{
   products CartProductType[]
   address Address?
 
-   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 type CartProductType{
@@ -93,7 +95,7 @@ type CartProductType{
 type Image{
   color String
   colorCode String
-  image String 
+  image String
 }
 
 type Address{
@@ -103,9 +105,9 @@ type Address{
   line2 String?
   postal_code String
   state String
-}
+} 
 
 enum Role{
-  USER
-  ADMIN
+    USER
+    ADMIN
 }
