@@ -70,25 +70,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({product}) => {
     }
 },[cartProducts])
     
- //------------------------------------Ilość--------------------------------------------
-    const handleQtyIncrease = useCallback(() => {
-        if (cartProduct.quantity === 20) {
-            return;
-        }
-        setCartProduct((prev) => {
-            return { ...prev, quantity: prev.quantity + 1 };
-        });
-    }, [cartProduct]);
-
-    const handleQtyDecrease = useCallback(() => {
-        if (cartProduct.quantity === 1) {
-            return;
-        }
-        setCartProduct((prev) => {
-            return { ...prev, quantity: prev.quantity - 1 };
-        });
-    }, [cartProduct]);
-
 //--------------------------------Colors/Images----------------------------------------------
 const handleColorSelect = useCallback((value: SelectedImgType) => {
     setCartProduct((prev) => {
