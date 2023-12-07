@@ -145,8 +145,6 @@ const handleColorSelect = useCallback((value: SelectedImgType) => {
                     <>
                         <SetQuantity 
                                 cartProduct={cartProduct}
-                                handleQtyIncrease={handleQtyIncrease}
-                                handleQtyDecrease={handleQtyDecrease}
                                 />
                         <Horizontal/>
 
