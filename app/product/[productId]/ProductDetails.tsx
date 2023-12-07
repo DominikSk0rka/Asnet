@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Rating } from "@mui/material";
 import SetQuantity from "@/app/components/products/SetQuantity";
 import Button from "@/app/components/products/Button";
 import ProductImage from "@/app/components/products/ProductImage";
@@ -70,11 +69,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({product}) => {
         }
     }
 },[cartProducts])
-//------------------------------------Ocena--------------------------------------------
-    const productRating = 
-    product.reviews.reduce((acc:number,item:any) => 
-    item.rating + acc, 0) / 
-    product.reviews.length;
     
  //------------------------------------Ilość--------------------------------------------
     const handleQtyIncrease = useCallback(() => {
@@ -114,12 +108,6 @@ const handleColorSelect = useCallback((value: SelectedImgType) => {
 
             <div className="flex flex-col gap-1 text-slate-500 text-sm">
             <h2 className="text-3xl font-medium text-slate-700">{product.name}</h2>
-           
-
-            <div className="flex items-center gap-2">
-                  <Rating value={productRating} readOnly/>
-                  <div>{product.reviews.length} opinie</div>
-            </div>
 
                     <Horizontal/>
                         <div className="text-justify">{product.description}</div>
